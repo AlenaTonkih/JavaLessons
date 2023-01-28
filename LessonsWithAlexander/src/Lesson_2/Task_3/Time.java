@@ -1,4 +1,4 @@
-package Lesson_2;
+package Lesson_2.Task_3;
 
 import java.time.LocalTime;
 
