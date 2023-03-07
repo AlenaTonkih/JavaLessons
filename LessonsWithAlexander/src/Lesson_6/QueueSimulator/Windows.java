@@ -20,11 +20,14 @@ public class Windows {
         }
         return -1;
     }
+    public boolean isOccupied(int position) {
+            return windows[position] != null;
+    }
 
     public void addPerson(Person person, int position){
         windows[position] = person;
     }
-    public void freeWindows(int position){
+    public void freeWindow(int position){
         windows[position] = null;
     }
 

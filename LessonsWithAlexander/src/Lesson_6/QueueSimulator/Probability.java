@@ -8,5 +8,11 @@ public class Probability {
         int random = min + (int) (Math.random() * max);
             return random <= 60;
     }
+    public static boolean needToGenerateFreeWindow(){
+        int max = 100;
+        int min = 0;
+        int random = min + (int) (Math.random() * max);
+        return random <= 90;
+    }
 }
 

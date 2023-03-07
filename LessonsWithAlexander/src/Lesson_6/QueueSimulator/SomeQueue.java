@@ -3,6 +3,11 @@ package Lesson_6.QueueSimulator;
 import java.util.ArrayList;
 
 public class SomeQueue<T> implements Queue <T>{ //я не придумала нормальное название для класса
+
+    public ArrayList<T> getList() {
+        return list;
+    }
+
     private ArrayList<T> list = new ArrayList<T>();
 
     @Override
