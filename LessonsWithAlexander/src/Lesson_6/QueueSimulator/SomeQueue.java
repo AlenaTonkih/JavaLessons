@@ -3,6 +3,11 @@ package Lesson_6.QueueSimulator;
 import java.util.ArrayList;
 
 public class SomeQueue<T> implements Queue <T>{ //я не придумала нормальное название для класса
+
+    public ArrayList<T> getList() {
+        return list;
+    }
+
     private ArrayList<T> list = new ArrayList<T>();
 
     @Override
@@ -12,7 +17,7 @@ public class SomeQueue<T> implements Queue <T>{ //я не придумала н�
     }
 
     @Override
-    public T returnElement() {
+    public T getFirst() { //сделать гет элемент
         return list.remove(0); //ф-ция remove достает элемент из начала списка и удаляет
         //а после возвращает, чтобы можно было его еще где-то использовать
     }
