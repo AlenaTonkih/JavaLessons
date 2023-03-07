@@ -1,18 +1,17 @@
 package Lesson_6.QueueSimulator;
 
 public class Probability {
-
     public static boolean needToGeneratePerson() {
-        int max = 100;                           //от 0 до 1
-        int min = 0;
-        int random = min + (int) (Math.random() * max);
-            return random <= 60;
+        return needToDo(60);
     }
-    public static boolean needToGenerateFreeWindow(){
-        int max = 100;
+    public static boolean needToReleaseFreeWindow(){
+        return needToDo(90);
+    }
+    private static boolean needToDo(int probability){
         int min = 0;
+        int max = 100;
         int random = min + (int) (Math.random() * max);
-        return random <= 90;
+        return random <= probability;
     }
 }
 

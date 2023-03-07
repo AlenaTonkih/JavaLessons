@@ -1,15 +1,13 @@
 package Lesson_6.QueueSimulator;
 
 public class Windows {
-    private int count;
     private Person [] windows;
 
     public Windows(int count) {
-        this.count = count;
         windows = new Person[count];
     }
     public int getCount() {
-        return count;
+        return windows.length; //возвращаю кол-во окон и в методах ссылаюсь на это число
     }
 
     public int findWindowFree(){
