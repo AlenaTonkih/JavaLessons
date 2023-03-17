@@ -5,7 +5,7 @@ public class Probability {
         return needToDo(60);
     }
     public static boolean needToReleaseFreeWindow(){
-        return needToDo(90);
+        return needToDo(30);
     }
     private static boolean needToDo(int probability){
         int min = 0;

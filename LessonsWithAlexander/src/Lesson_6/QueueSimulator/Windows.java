@@ -29,4 +29,7 @@ public class Windows {
         windows[position] = null;
     }
 
+    public Person[] getWindows() {
+        return windows;
+    }
 }
