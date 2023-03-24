@@ -1,5 +1,7 @@
 package Lesson_6.QueueSimulator;
 
+import java.util.Arrays;
+
 public class Windows {
     private Person [] windows;
 
@@ -31,5 +33,12 @@ public class Windows {
 
     public Person[] getWindows() {
         return windows;
+    }
+
+    @Override
+    public String toString() {
+        return "Windows{" +
+                "windows=" + Arrays.toString(windows) +
+                '}';
     }
 }
