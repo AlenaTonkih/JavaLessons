@@ -1,5 +1,5 @@
 package Lesson_4.Task_3;
 
-public interface Hunt {
+public interface Hunter {
     void hunt(Animal animal);
 }

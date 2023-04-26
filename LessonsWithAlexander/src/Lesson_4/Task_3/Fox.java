@@ -1,6 +1,6 @@
 package Lesson_4.Task_3;
 
-public class Fox extends Animal implements Hunt{
+public class Fox extends Animal implements Hunter {
     private int countLive;
     @Override
     public void hunt(Animal animal) {

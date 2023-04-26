@@ -1,6 +1,6 @@
 package Lesson_4.Task_3;
 
-public class Bear extends Animal implements Hunt{
+public class Bear extends Animal implements Hunter {
 
     @Override
     public void hunt(Animal animal) {
@@ -12,9 +12,7 @@ public class Bear extends Animal implements Hunt{
             System.out.println("Медведь не может охотится на медведя");
         }
     }
-    public Bear(){
 
-    }
     public Bear(String name, Type type, int age) {
         super(name, type, age);
     }

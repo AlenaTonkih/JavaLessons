@@ -1,7 +1,7 @@
 package Lesson_4.Task_1;
 
 import static Lesson_4.Task_1.Units.MILLISECONDS;
-import static Time.Task_3.Units.SECONDS;
+
 
 public class Timer {
    private long start;
