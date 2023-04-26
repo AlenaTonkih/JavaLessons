@@ -1,4 +1,4 @@
-package Lesson_2.Task_3;
+package Task_2;
 
 import java.time.LocalTime;
 
@@ -7,7 +7,7 @@ public class Time {
 
     //Ход мыслей: передаю в метод два объекта времени. Отдельно суммирую часы и минуты. Если сумма минут получается больше, чем 59,
     //то делю на 60 и полученное целое число добавляю к часам, а из остатка делаю минуты
-    public LocalTime addTimeObj(LocalTime localTime1, LocalTime localTime2) {
+    public static LocalTime addTimeObj(LocalTime localTime1, LocalTime localTime2) {
         LocalTime localTimeNew = null;
         int sumHourTime = localTime1.getHour() + localTime2.getHour(); //получаю кол-во часов из объекта №1 и из объекта №2
 
@@ -26,7 +26,7 @@ public class Time {
     }
 
     //Сложение времени и произвольного количества минут 10:00 + 120 = 12:00
-    public LocalTime addMinutes(LocalTime localTime, int minutes) {
+    public static LocalTime addMinutes(LocalTime localTime, int minutes) {
         LocalTime localTime1 = null; //объект в котором буду хранить время после прибавления минут
 
         int hourSum = localTime.getHour(); //получила кол-во часов из текущего времени

@@ -1,6 +1,6 @@
 package Lesson_4.Task_3;
 
-public class Frog extends Animal implements Hunt{
+public class Frog extends Animal implements Hunter {
     private int countLive = 3;
 
     @Override

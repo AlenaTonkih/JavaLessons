@@ -1,74 +1,80 @@
 package Lesson_0.Array;
 
-import java.util.Arrays;
-
 public class ArrayMethod {
-    public void returnAverage(int[] inputArray) {
+    public int[] calculateAverage(int[] array) {
 
         //1. Вывести элементы массива, которые больше среднего арифметического
         // этого массива
         double sum = 0;
-        for (int i = 0; i < inputArray.length; i++) {
-            sum = sum + inputArray[i];
+        for (int k : array) {
+            sum = sum + k;
         }
-        double average = sum / inputArray.length;
+        double average = sum / array.length;
 
-        for (int i = 0; i < inputArray.length; i++) {
-            if (inputArray[i] > average) {
-                System.out.print(inputArray[i] + " ");
+        int count = 0;
+        for (int j : array) {
+            if (j > average) {
+                count++;
+            }
+
+        }
+        int index = 0;
+        int[] newArray = new int[count];
+        for(int k : array){
+            if(k > average) {
+                newArray[index] = k;
+                index++;
             }
         }
+        return newArray;
     }
 
     //5. Найти сумму цифр в числе
-    public int sum (int inputInt) {
+    public int getSumOfDigits (int number) {
         int sum = 0;
-        int currentDigit;
 
-        for (int i = 0; i <= 3; i++) {
-            currentDigit = inputInt % 10; //нахожу остаток от деления
-            sum = sum + currentDigit;
-            inputInt = inputInt / 10;
+        while(number > 0) { //for - когда знаем точное кол-во повторений, while - когда не знаем.
+            int currentDigit = number % 10; //нахожу остаток от деления
+            sum += currentDigit;
+            number /= 10;
         }
-        sum = sum + inputInt;
+        sum += number;
 
         return sum;
     }
     //6. В заданном массиве поменять местами максимальный и минимальный элементы массива.
     // Если таких элементов несколько, менять местами первые вхождения этих элементов.
-    public void minAndMax(int[] inputArray){
+    public void swapMinAndMax(int[] array){
         int indexMax = 0;
         int indexMin = 0;
 
-        for (int i = 0; i < inputArray.length; i++) {
-            if(inputArray[i] > inputArray[indexMax]){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > array[indexMax]) {
                 indexMax = i;
             }
-            if(inputArray[i] < inputArray[indexMin]){
+            if (array[i] < array[indexMin]) {
                 indexMin = i;
             }
-            int temp = inputArray[indexMin];
-            inputArray[indexMin] = inputArray[indexMax];
-            inputArray[indexMax] = temp;
         }
-        System.out.println(Arrays.toString(inputArray));
+            int temp = array[indexMin];
+            array[indexMin] = array[indexMax];
+            array[indexMax] = temp;
     }
     //2. Задано два числа: значение, индекс. Задан массив.
     // Необходимо вставить значение на указанный индекс.
     // Старый элемент и те, которые располагаются за ним, сдвинуть вправо
-    public void array(int number, int index, int[] inputArray){
-        int[] newArray = new int[inputArray.length + 1]; //чтобы было место для нового элемента массива
+    public void insert(int[] array, int number, int index){ //сначала кладем источник данных, потом остальное
+        int[] newArray = new int[array.length + 1]; //чтобы было место для нового элемента массива
         newArray[index] = number;
 
         for (int i = 0; i < index; i++) {
-            newArray[i] = inputArray[i]; //копирую старый массив в новый, добавляю все элементы старого массива в новый
+            newArray[i] = array[i]; //копирую старый массив в новый, добавляю все элементы старого массива в новый
             //либо вариант №2 через opyOf
         }
-        for (int i = index; i < inputArray.length; i++) {
-            newArray[i + 1] = inputArray[i];
+        for (int i = index; i < array.length; i++) {
+            newArray[i + 1] = array[i];
         }
-        System.out.println(Arrays.toString(newArray));
-        }
+    }
 
     }
 

@@ -1,6 +1,6 @@
 package Lesson_4.Task_3;
 
-public class Person implements Hunt{
+public class Person implements Hunter {
     private String name;
     private Type type;
     @Override
