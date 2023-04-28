@@ -2,12 +2,26 @@ package ProductAndOrders;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Product product = new Product("Meat", TypeOfProduct.FOOD, 100);
-        List<Product> products = new ArrayList<>();
-        products.add(product);
+        Scanner scanner = new Scanner(System.in);
+        OrderService orderService = new OrderService();
+        OrderCostCalculation orderCostCalculation = new OrderCostCalculation();
+
+        Product product = new Product("Meat", TypeOfProduct.FOOD, 1300);
+        Product product1 = new Product("Fish", TypeOfProduct.FOOD, 120);
+        Product product2 = new Product("Tea", TypeOfProduct.DRINKS, 60);
+
+        System.out.println("Номер вашего заказа: " + orderService.randomID());
+        System.out.println();
+        orderCostCalculation.getTotalPrice(orderService.addProductsToOrder(product, product1, product2));
+        System.out.println();
+        orderService.dateAndTimeOfRegistrationOfTheOrder();
+        System.out.println();
+        System.out.println("Вы готовы оплатить товар, введите 'Да' или 'Нет'");
+        String answer = scanner.nextLine();
+        orderCostCalculation.payOrder(answer);
     }
 }
 /*
