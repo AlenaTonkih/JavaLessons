@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Orders {
+public class Orders  { //DTO
     private int ID;
     private LocalDate orderDate; //дата регистрации заказа
     private LocalDate paymentDate; //дата оплаты заказа
@@ -15,7 +15,7 @@ public class Orders {
         ID = (int) (Math.random() * 100);
         return ID;
     }
-    public double getTotalPrice() {
+    public double getTotalPrice() { //высчитываем скидку тут же
         totalPrice = allProducts.stream()
                 .mapToDouble(Product::getPrice)
                 .sum(); //метод, находящий всю сумму заказа
@@ -23,7 +23,7 @@ public class Orders {
     }
 
 
-    public double applyDiscountToOrder(double discount){
+    public double applyDiscountToOrder(double discount){ //а здесь просто храним размер скидки
         double discountPrice = discount * totalPrice % 100;
         return discountPrice;
     }

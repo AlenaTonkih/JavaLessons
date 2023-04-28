@@ -5,23 +5,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Product product = new Product("Food", "Bread", 1 );
-        Product product1 = new Product("Food", "Meat", 101);
-        Product product2 = new Product("Food", "Fish", 120);
-        Product product3 = new Product("Toy", "Bear", 110);
-
+        Product product = new Product("Meat", TypeOfProduct.FOOD, 100);
         List<Product> products = new ArrayList<>();
         products.add(product);
-        products.add(product1);
-        products.add(product2);
-        products.add(product3);
-
-        Product product4 = new Product();
-        System.out.println(product4.returnProductsOver100((ArrayList<Product>) products));
-        System.out.println();
-        System.out.println(product4.returnToysAtDiscount((ArrayList<Product>) products));
-        System.out.println();
-        System.out.println(product4.returnListInAlphabeticalOrder((ArrayList<Product>) products));
     }
 }
 /*
