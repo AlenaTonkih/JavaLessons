@@ -1,14 +1,11 @@
-package BigProgramm_ToDoList;
-
-import java.util.HashMap;
+package BigProgramm_ToDoList.dto;
 
 public class Task {
     private Status status;
     private int ID;
-    private String taskName;
-    private String taskDescription;
+    private String name;
+    private String description;
 
-    private Subtask subtask;
     private static int counterID = 0;
 
     Task(){}
@@ -16,14 +13,13 @@ public class Task {
     public Task(String taskName, String taskDescription) { //констурктор с описанием задачи
         this.status = Status.NEW; //потому что когда задача задается, она изначально новая
         this.ID = counterID++;
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
+        this.name = taskName;
+        this.description = taskDescription;
     }
-
-    public Task(String taskName) {
-        this.status = Status.NEW;
-        this.ID = counterID++;
-        this.taskName = taskName;
+    public Task(Status status, String name, String description) {
+        this.status = status;
+        this.name = name;
+        this.description = description;
     }
 
     public void setStatus(Status status) {
@@ -42,12 +38,12 @@ public class Task {
         return ID;
     }
 
-    public String getTaskName() {
-        return taskName;
+    public String getName() {
+        return name;
     }
 
-    public String getTaskDescription() {
-        return taskDescription;
+    public String getDescription() {
+        return description;
     }
 
     @Override
@@ -55,8 +51,8 @@ public class Task {
         return "Task{" +
                 "status=" + status +
                 ", ID=" + ID +
-                ", taskName='" + taskName + '\'' +
-                ", taskDescription='" + taskDescription + '\'' +
+                ", taskName='" + name + '\'' +
+                ", taskDescription='" + description + '\'' +
                 '}';
     }
 }

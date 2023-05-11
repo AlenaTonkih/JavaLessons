@@ -1,5 +1,10 @@
 package BigProgramm_ToDoList;
 
+import BigProgramm_ToDoList.dto.Status;
+import BigProgramm_ToDoList.dto.Subtask;
+import BigProgramm_ToDoList.dto.Task;
+import BigProgramm_ToDoList.servisw.Manager;
+
 public class Main {
     public static void main(String[] args) {
         Task task = new Task("Экзамен", "А зачем нужно описание...");
@@ -17,9 +22,8 @@ public class Main {
         System.out.println();
 
         Manager manager = new Manager();
-        manager.addElement(task.getID(), task1.getTaskName());
-        manager.addElement(task2.getID(), task2.getTaskName());
-        System.out.println(manager.taskHashMap);
+        manager.addElement();
+
 
     }
 }
