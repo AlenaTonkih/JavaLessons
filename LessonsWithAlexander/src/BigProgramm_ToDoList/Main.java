@@ -1,5 +1,8 @@
 package BigProgramm_ToDoList;
 
+import BigProgramm_ToDoList.configuration.ApplicationSetting;
+import BigProgramm_ToDoList.dao.InMemoryTaskDao;
+import BigProgramm_ToDoList.dto.Epic;
 import BigProgramm_ToDoList.dto.Status;
 import BigProgramm_ToDoList.dto.Subtask;
 import BigProgramm_ToDoList.dto.Task;
@@ -7,22 +10,15 @@ import BigProgramm_ToDoList.servisw.Manager;
 
 public class Main {
     public static void main(String[] args) {
-        Task task = new Task("Экзамен", "А зачем нужно описание...");
-        System.out.println(task);
-        Task task1 = new Task("Переезд", "Переезд в Сокольники");
-        System.out.println(task1);
-        Task task2 = new Task("Занятие в 18.00");
-        System.out.println(task2);
-        task2.setStatus(Status.IN_PROGRESS);
-        System.out.println(task2);
+        InMemoryTaskDao inMemoryTaskDao = new InMemoryTaskDao();
+        ApplicationSetting applicationSetting = new ApplicationSetting();
+        Task task = new Task(Status.NEW, "в 6", "Учеба");
 
-        Task task3 = new Subtask("Собрать вещи", "...");
-        System.out.println(task3);
+        applicationSetting.readFile(task);
+       inMemoryTaskDao.putHashMap(5, new Task(Status.NEW, "в 6", "Учеба"));
 
-        System.out.println();
 
-        Manager manager = new Manager();
-        manager.addElement();
+
 
 
     }

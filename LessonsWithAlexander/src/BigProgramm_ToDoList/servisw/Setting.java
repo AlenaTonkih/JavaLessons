@@ -25,7 +25,6 @@ public class Setting {
         }
         setting.setProperties(properties); //присваиваю настройки объекту класса Setting
         return setting;
-
     }
 
     private Properties properties;

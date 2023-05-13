@@ -8,7 +8,7 @@ public class Task {
 
     private static int counterID = 0;
 
-    Task(){}
+    public Task(){}
 
     public Task(String taskName, String taskDescription) { //констурктор с описанием задачи
         this.status = Status.NEW; //потому что когда задача задается, она изначально новая
